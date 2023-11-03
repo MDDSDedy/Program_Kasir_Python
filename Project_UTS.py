@@ -1,6 +1,7 @@
 import sys
-total = []
 
+total = []
+orders = []
 print("----------------- Program Kasir Dedy Jaya -----------------")
 pembeli = input("Masukkan nama Pembeli: ")
 print ("Nama Pembeli :", pembeli)
@@ -37,7 +38,7 @@ def menu():
     elif pesan =="5":
         totalan()
     elif pesan == "6":
-        exit()
+        sys.exit()
     else:
         print("Pilihan yang anda masukan salah!")
         menu()
@@ -58,6 +59,7 @@ def resistor():
         jml_res100 = int(input("Jumlah Pesanan Resistor 100 Ohm ="))
         harga_res100 = 100*jml_res100
         total.append(harga_res100)
+        orders.append(f"Resistor 100 Ohm: {jml_res100} pcs, Harga: Rp {harga_res100}")
         pilihan_res100 = input("Apakah Anda Ingin Order Resistor Kembali y/t =")
         if pilihan_res100 == "y":
             resistor()
@@ -70,6 +72,7 @@ def resistor():
         jml_res1k = int(input("Jumlah Pesanan Resistor 1000 Ohm ="))
         harga_res1k = 200*jml_res1k
         total.append(harga_res1k)
+        orders.append(f"Resistor 1000 Ohm: {jml_res1k} pcs, Harga: Rp {harga_res1k}")
         pilihan_res1k = input("Apakah Anda Ingin Order Resistor Kembali y/t =")
         if pilihan_res1k == "y":
             resistor()
@@ -82,6 +85,7 @@ def resistor():
         jml_res10k = int(input("Jumlah Pesanan Resistor 10000 Ohm ="))
         harga_res10k = 500*jml_res10k
         total.append(harga_res10k)
+        orders.append(f"Resistor 10000 Ohm: {jml_res10k} pcs, Harga: Rp {harga_res10k}")
         pilihan_res10k = input("Apakah Anda Ingin Order Resistor Kembali y/t =")
         if pilihan_res10k == "y":
             resistor()
@@ -113,6 +117,7 @@ def sensor():
         jml_sesa = int(input("Jumlah Pesanan Sensor Arus ="))
         harga_sesa = 10000*jml_sesa
         total.append(harga_sesa)
+        orders.append(f"Sensor Arus: {jml_sesa} pcs, Harga: Rp {harga_sesa}")
         pilihan_sesa = input("Apakah Anda Ingin Order Sensor Kembali y/t =")
         if pilihan_sesa == "y":
             sensor()
@@ -125,6 +130,7 @@ def sensor():
         jml_sest = int(input("Jumlah Pesanan Sensor Tegangan ="))
         harga_sest = 20000*jml_sest
         total.append(harga_sest)
+        orders.append(f"Sensor Tegangan: {jml_sest} pcs, Harga: Rp {harga_sest}")
         pilihan_sest = input("Apakah Anda Ingin Order Sensor Kembali y/t =")
         if pilihan_sest == "y":
             sensor()
@@ -137,6 +143,7 @@ def sensor():
         jml_sess = int(input("Jumlah Pesanan Sensor Suhu ="))
         harga_sess = 25000*jml_sess
         total.append(harga_sess)
+        orders.append(f"Sensor Suhu: {jml_sess} pcs, Harga: Rp {harga_sess}")
         pilihan_sess = input("Apakah Anda Ingin Order Sensor Kembali y/t =")
         if pilihan_sess == "y":
             sensor()
@@ -168,6 +175,7 @@ def mikro():
         jml_mkta = int(input("Jumlah Pesanan Arduino ="))
         harga_mkta = 50000*jml_mkta
         total.append(harga_mkta)
+        orders.append(f"Arduino: {jml_mkta} pcs, Harga: Rp {harga_mkta}")
         pilihan_mkta = input("Apakah Anda Ingin Order Mikrokontroller Kembali y/t =")
         if pilihan_mkta == "y":
             mikro()
@@ -177,9 +185,10 @@ def mikro():
             print("Pilihan yang anda masukan salah!")
             mikro()
     elif mkt =="2":
-        jml_mkts = int(input("Jumlah Pesanan Sensor Tegangan ="))
+        jml_mkts = int(input("Jumlah Pesanan STM32F4 ="))
         harga_mkts = 100000*jml_mkts
         total.append(harga_mkts)
+        orders.append(f"STM32F4: {jml_mkts} pcs, Harga: Rp {harga_mkts}")
         pilihan_mkts = input("Apakah Anda Ingin Order Mikrokontroller Kembali y/t =")
         if pilihan_mkts == "y":
             mikro()
@@ -187,11 +196,12 @@ def mikro():
             menu()
         else:
             print("Pilihan yang anda masukan salah!")
-            sensor()
+            mikro()
     elif mkt =="3":
-        jml_mktr = int(input("Jumlah Pesanan Sensor Suhu ="))
+        jml_mktr = int(input("Jumlah Pesanan RaspBerry ="))
         harga_mktr = 500000*jml_mktr
         total.append(harga_mktr)
+        orders.append(f"Raspberry: {jml_mktr} pcs, Harga: Rp {harga_mktr}")
         pilihan_mktr = input("Apakah Anda Ingin Order Mikrokontroller Kembali y/t =")
         if pilihan_mktr == "y":
             mikro()
@@ -221,6 +231,7 @@ def led():
         jml_lb = int(input("Jumlah Pesanan LED Biru ="))
         harga_lb = 500*jml_lb
         total.append(harga_lb)
+        orders.append(f"LED Biru: {jml_lb} pcs, Harga: Rp {harga_lb}")
         pilihan_lb = input("Apakah Anda Ingin Order LED Kembali y/t =")
         if pilihan_lb == "y":
             led()
@@ -233,6 +244,7 @@ def led():
         jml_lh = int(input("Jumlah Pesanan LED Hijau ="))
         harga_lh = 500*jml_lh
         total.append(harga_lh)
+        orders.append(f"LED Hijau: {jml_lh} pcs, Harga: Rp {harga_lh}")
         pilihan_lh = input("Apakah Anda Ingin Order LED Kembali y/t =")
         if pilihan_lh == "y":
             led()
@@ -245,6 +257,7 @@ def led():
         jml_lm = int(input("Jumlah Pesanan LED Merah ="))
         harga_lm = 500*jml_lm
         total.append(harga_lm)
+        orders.append(f"LED Merah: {jml_lm} pcs, Harga: Rp {harga_lm}")
         pilihan_lm = input("Apakah Anda Ingin Order LED Kembali y/t =")
         if pilihan_lm == "y":
             led()
@@ -261,30 +274,34 @@ def led():
 
 # FungsiTotalan
 def totalan():
-    for harga in total:
-       print("SubTotal         : ", sum(total))
-       diskon = 0
-       a = sum(total)
-       if a > 500000:
-           diskon = a * 8/100
-       elif a > 300000:
-           diskon = a * 5/100
-       elif a > 200000:
-           diskon = a * 2/100
-       elif a > 100000:
-           diskon = a * 1/100
-       else:
-            diskon = 0       
-       print("CashBack         : ", diskon)
-       totalakhir = a - diskon
-       print("Total            : ", totalakhir)
-       print("-------------------------------")
-       bayar = int(input("Bayar            :  "))
-       kembalian = bayar - totalakhir
-       print("Kembalian        : ", kembalian)
-       print("-------------------------------")
-       print("          Terima Kasih         ")
-       print("-------------------------------")
-       exit()
+    print("Daftar pesanan:")
+    for idx, order in enumerate(orders, start=1):
+        print(f"Pesanan ke-{idx}: {order}")
+
+    subtotal = sum(total)
+    print("SubTotal         : ", subtotal)
+
+    diskon = 0
+    if subtotal > 500000:
+        diskon = subtotal * 8 / 100
+    elif subtotal > 300000:
+        diskon = subtotal * 5 / 100
+    elif subtotal > 200000:
+        diskon = subtotal * 2 / 100
+    elif subtotal > 100000:
+        diskon = subtotal * 1 / 100
+
+    print("CashBack         : ", diskon)
+    totalakhir = subtotal - diskon
+    print("Total            : ", totalakhir)
+    print("-------------------------------")
+
+    bayar = int(input("Bayar            :  "))
+    kembalian = bayar - totalakhir
+    print("Kembalian        : ", kembalian)
+    print("-------------------------------")
+    print("          Terima Kasih         ")
+    print("-------------------------------")
+    sys.exit()
 
 menu()
